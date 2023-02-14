@@ -1,20 +1,28 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { App } from './app/App';
 import { Provider } from 'react-redux';
-import { store } from './services/store';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { compose } from 'redux';
+import { store } from './services/store';
 import './index.css';
 
-const container = document.getElementById('root')!;
-const root = createRoot(container);
+declare global {
+    interface Window {
+      __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    }
+}
+
+const root = createRoot(
+    document.getElementById('root') as HTMLDivElement
+);
 
 root.render(
-    <React.StrictMode>
+    <StrictMode>
         <Provider store={store}>
             <App />
         </Provider>
-    </React.StrictMode>
+    </StrictMode>
 );
 
 reportWebVitals();
