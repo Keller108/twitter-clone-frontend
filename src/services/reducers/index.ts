@@ -1,35 +1,24 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import { TLoaderActions } from "../actions";
-import { LOADER_OFF, LOADER_ON } from "../constants/loader";
+import { combineReducers, createReducer } from "@reduxjs/toolkit";
+import { loaderOff, loaderOn } from "../actions/loader";
 
-type TInitialAppState = {
+type TInitialLoaderState = {
     isLoading: boolean;
 };
 
-const initialAppState: TInitialAppState = {
+const initialLoaderState: TInitialLoaderState = {
     isLoading: false
 };
 
-export const loaderReducer = (state = initialAppState, action: TLoaderActions) => {
-    switch (action.type) {
-        case LOADER_ON: {
-            return {
-                ...state,
-                isLoading: true
-            }
-        }
-        case LOADER_OFF: {
-            return {
-                ...state,
-                isLoading: false
-            }
-        }
-        default: {
-            return state;
-        }
-    }
-}
+export const loaderReducer = createReducer(initialLoaderState, builder => {
+    builder
+        .addCase(loaderOn, state => {
+            state.isLoading = true;
+        })
+        .addCase(loaderOff, state => {
+            state.isLoading = false;
+        })
+});
 
 export const rootReducer = combineReducers({
-    loaderStore: loaderReducer,
+    loaderStore: loaderReducer
 });
