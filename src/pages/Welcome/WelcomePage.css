@@ -1,3 +1,49 @@
 .welcome-page {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
     height: 100vh;
+    color: #242424;
+}
+
+.welcome-page__preview {
+    width: 65%;
+    background-image: url("./assets/welcome-preview-img.jpg");
+    background-size: cover;
+}
+
+.welcome-page__join {
+    width: 35%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 72px;
+}
+
+.welcome-page__twitter-logo {
+    width: 36px;
+    height: auto;
+    object-fit: cover;
+    font-size: 0;
+    margin: 0;
+    margin-bottom: 32px;
+}
+
+.welcome-page__heading {
+    font-size: 62px;
+    line-height: 1.5;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 72px;
+}
+
+.welcome-page__description {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 24px;
 }
