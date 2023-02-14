@@ -1,4 +1,4 @@
-import { LOADER_OFF, LOADER_ON } from "../constants";
+import { LOADER_OFF, LOADER_ON } from "../constants/loader";
 
 export interface ILoaderOnAction {
     readonly type: typeof LOADER_ON;

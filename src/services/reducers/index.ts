@@ -1,6 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { TLoaderActions } from "../actions";
-import { LOADER_OFF, LOADER_ON } from "../constants";
+import { LOADER_OFF, LOADER_ON } from "../constants/loader";
 
 type TInitialAppState = {
     isLoading: boolean;
