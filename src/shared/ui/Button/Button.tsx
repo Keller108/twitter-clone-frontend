@@ -3,7 +3,7 @@ import './Button.css';
 
 type Props = {
     type: ButtonStyle;
-    action: () => void;
+    action?: () => void;
     children: string;
     extraClass?: string;
 };
