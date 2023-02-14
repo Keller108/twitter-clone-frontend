@@ -8,19 +8,19 @@
 }
 
 .welcome-page__preview {
-    width: 65%;
+    width: 60%;
     background-image: url("./assets/welcome-preview-img.jpg");
     background-size: cover;
 }
 
 .welcome-page__join {
-    width: 35%;
+    width: 40%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-left: 72px;
+    padding-left: 48px;
 }
 
 .welcome-page__twitter-logo {

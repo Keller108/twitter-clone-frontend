@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { WelcomePage } from "../pages/Welcome";
 import { NotFound } from "../pages/NotFound";
 import { HOME_ROUTE, WELCOME_ROUTE } from "../shared/routes";
-import './App.css';
 import { HomePage } from "../pages/Home";
+import './App.css';
 
 export function App() {
     return (
