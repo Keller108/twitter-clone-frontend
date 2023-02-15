@@ -1,7 +1,8 @@
+import { Form } from '../../shared/ui/Form';
 import './Register.css';
 
 export const Register = () => {
     return (
-        <div>Register</div>
+        <Form title="Регистрация" />
     )
 }

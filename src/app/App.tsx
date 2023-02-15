@@ -7,6 +7,7 @@ import { HomePage } from "../pages/Home";
 import { Modal } from "../shared/ui/Modal";
 import { useDispatch, useSelector } from "../shared/hooks";
 import { useModalType } from '../shared/hooks';
+import { modalClose } from '../services/actions/modal';
 
 export function App() {
     const { isModalActive } = useSelector(store => store.modalStore);
@@ -16,9 +17,7 @@ export function App() {
 
     const state = location.state && location.state.background;
 
-    const closeModal = () => {
-        dispatch(() => closeModal());
-    };
+    const closeModalHandler = () => dispatch(modalClose());
 
     const component = useModalType();
 
@@ -31,14 +30,14 @@ export function App() {
             </Routes>
             {state && isModalActive && <Routes>
                     <Route
-                        path={`/welcome/${REGISTER_ROUTE}`}
-                        element={<Modal onClose={closeModal}>
+                        path={`/welcome${REGISTER_ROUTE}`}
+                        element={<Modal onClose={closeModalHandler}>
                             {component}
                         </Modal>}
                     />
                     <Route
-                        path={`/welcome/${LOGIN_ROUTE}`}
-                        element={<Modal onClose={closeModal}>
+                        path={`/welcome${LOGIN_ROUTE}`}
+                        element={<Modal onClose={closeModalHandler}>
                             {component}
                         </Modal>}
                     />
