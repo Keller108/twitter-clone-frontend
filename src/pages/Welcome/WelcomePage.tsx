@@ -3,8 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../../shared/ui/Button';
 import './WelcomePage.css';
 import { LOGIN_ROUTE, REGISTER_ROUTE } from '../../shared/routes';
+import { useDispatch } from '../../shared/hooks';
+import { modalOpen } from '../../services/actions/modal';
+import { ModalType } from '../../shared/types';
 
 export const WelcomePage = () => {
+    const dispatch = useDispatch();
     const location = useLocation();
 
     return (
@@ -21,6 +25,7 @@ export const WelcomePage = () => {
                 <Link
                     to={{ pathname: REGISTER_ROUTE }}
                     state={{ background: location }}
+                    onClick={() => dispatch(modalOpen(ModalType.REGISTER))}
                 >
                     <Button
                         type="primary"
@@ -30,11 +35,12 @@ export const WelcomePage = () => {
                 <Link
                     to={{ pathname: LOGIN_ROUTE }}
                     state={{ background: location }}
+                    onClick={() => dispatch(modalOpen(ModalType.LOGIN))}
                 >
                     <Button
                         type="secondary"
                         action={() => 1}
-                    >Зарегистрироваться</Button>
+                    >Залогиниться</Button>
                 </Link>
             </section>
         </div>

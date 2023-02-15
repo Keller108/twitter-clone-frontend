@@ -24,7 +24,7 @@ export function App() {
 
     return (
         <div className="app">
-            <Routes>
+            <Routes location={state || location}>
                 <Route index path={HOME_ROUTE} element={<HomePage />} />
                 <Route path={WELCOME_ROUTE} element={<WelcomePage />} />
                 <Route path='*' element={<NotFound />} />
