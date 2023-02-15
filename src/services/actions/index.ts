@@ -1,1 +1,2 @@
-export type { TLoaderActions } from './loader';
+export type { LoaderActions } from './loader';
+export type { ModalActions } from './modal';

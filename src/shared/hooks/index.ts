@@ -6,5 +6,7 @@ import {
 import type {} from "redux-thunk/extend-redux";
 import { AppDispatch, RootState } from '../types';
 
+export { useModalType } from './useModalType';
+
 export const useSelector: TypedUseSelectorHook<RootState> = selectorHook;
 export const useDispatch: () => AppDispatch = dispatchHook;
