@@ -30,6 +30,7 @@ export const WelcomePage = () => {
                     <Button
                         type="primary"
                         extraClass="mb-14"
+                        actionType="button"
                     >Зарегистрироваться</Button>
                 </Link>
                 <Link
@@ -39,7 +40,7 @@ export const WelcomePage = () => {
                 >
                     <Button
                         type="secondary"
-                        action={() => 1}
+                        actionType="button"
                     >Залогиниться</Button>
                 </Link>
             </section>

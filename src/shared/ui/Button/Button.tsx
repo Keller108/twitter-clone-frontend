@@ -1,4 +1,4 @@
-import { ButtonStyle } from './types';
+import { ButtonAction, ButtonStyle } from './types';
 import './Button.css';
 
 type Props = {
@@ -6,11 +6,16 @@ type Props = {
     action?: () => void;
     children: string;
     extraClass?: string;
+    actionType: ButtonAction;
 };
 
-export const Button = ({ type, action, children, extraClass }: Props) => {
+export const Button = ({ type, action, children, extraClass, actionType }: Props) => {
     return (
-        <button className={`button button_${type} ${extraClass}`}>
+        <button
+            className={`button button_${type} ${extraClass}`}
+            onClick={action}
+            type={actionType}
+        >
             {children}
         </button>
     )

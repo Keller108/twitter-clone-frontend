@@ -26,7 +26,7 @@ export const Modal = ({ onClose, children }: Props) => {
     return createPortal(
         <>
             <div className="modal">
-                <span className="modal__closeBtn" />
+                <span onClick={modalClose} className="modal__closeBtn" />
                 {children}
             </div>
             <ModalOverlay closeModal={modalClose} />

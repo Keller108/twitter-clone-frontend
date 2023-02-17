@@ -3,6 +3,10 @@ import './Register.css';
 
 export const Register = () => {
     return (
-        <Form title="Регистрация" />
+        <Form
+            formTitle="Зарегистрироваться"
+            btnText="Регистрация"
+            onSubmit={() => 1}
+        />
     )
 }
