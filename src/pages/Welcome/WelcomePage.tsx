@@ -23,7 +23,7 @@ export const WelcomePage = () => {
                 <h1 className="welcome-page__heading">Happening now</h1>
                 <p className="welcome-page__description">Присоединиться</p>
                 <Link
-                    to={{ pathname: `${location.pathname}${REGISTER_ROUTE}` }}
+                    to={REGISTER_ROUTE}
                     state={{ background: location }}
                     onClick={() => dispatch(modalOpen(ModalType.REGISTER))}
                 >
@@ -34,7 +34,7 @@ export const WelcomePage = () => {
                     >Зарегистрироваться</Button>
                 </Link>
                 <Link
-                    to={{ pathname: `${location.pathname}${LOGIN_ROUTE}` }}
+                    to={LOGIN_ROUTE}
                     state={{ background: location }}
                     onClick={() => dispatch(modalOpen(ModalType.LOGIN))}
                 >
