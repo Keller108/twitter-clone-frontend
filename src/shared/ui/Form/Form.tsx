@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Button } from '../Button';
 import './Form.css';
 
@@ -6,10 +5,9 @@ type Props = {
     formTitle: string;
     btnText: string;
     onSubmit: () => void;
-    redirectLink: string;
 };
 
-export const Form = ({ formTitle, btnText, onSubmit, redirectLink }: Props) => {
+export const Form = ({ formTitle, btnText, onSubmit }: Props) => {
     return (
         <form onSubmit={onSubmit} className="form">
             <h2 className="form__title">{formTitle}</h2>
@@ -25,11 +23,6 @@ export const Form = ({ formTitle, btnText, onSubmit, redirectLink }: Props) => {
             >
                 {btnText}
             </Button>
-            <p className="form__link">Уже Зарегистрированы?<br/>
-                <Link
-                    to={redirectLink}
-                >Войти</Link>
-            </p>
         </form>
     )
 }

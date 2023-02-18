@@ -1,7 +1,12 @@
+import { Form } from '../../shared/ui/Form';
 import './Login.css';
 
 export const Login = () => {
     return (
-        <div>Login</div>
+        <Form
+            formTitle="Авторизоваться"
+            btnText="Авторизация"
+            onSubmit={() => 1}
+        />
     )
 }
