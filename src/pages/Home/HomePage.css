@@ -1,0 +1,21 @@
+.home-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.features {
+    width: 30%;
+    background-color: rgb(191, 191, 191);
+}
+
+.twittes {
+    width: 40%;
+    background-color: rgb(138, 138, 138);
+}
+
+.news {
+    width: 30%;
+    background-color: rgb(138, 138, 138);
+}
