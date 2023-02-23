@@ -1,27 +1,31 @@
 import './Features.css';
-import HOME_ICON from './icons/icon_toolbar_home.svg';
-
-interface IFeatureItem {
-    title: string;
-    link: string;
-    iconPath: string;
-}
+import { featuresIconsMap } from './icons/featuresIconsMap';
 
 export const Features = () => {
     const featuresMap = {
         home: {
             title: 'Home',
+            value: 'home',
             link: '/home',
-            iconPath: HOME_ICON
+
+        },
+        profile: {
+            title: 'Profile',
+            value: 'profile',
+            link: '/profile',
+
         }
     };
+
+    //@ts-ignore
+    const getIcon = (key: string) => featuresIconsMap[key];
 
     const options = Object.entries(featuresMap).map(([key, value]) => ({ key, value }));
 
     return (
         <ul className="features">
             {options.map(({ key, value }) => <li className="features__item">
-                <img src={value.iconPath} alt={key} />
+                {getIcon(key)}
                 <p className="features__text">{value.title}</p>
             </li>)}
         </ul>

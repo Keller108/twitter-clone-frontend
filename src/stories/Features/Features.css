@@ -1,3 +1,31 @@
 .features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+.features__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style-type: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.features__item svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.features__item:hover {
+    color: #1DA1F2;
+    fill: #1DA1F2;
+    stroke: #1DA1F2;
 }
