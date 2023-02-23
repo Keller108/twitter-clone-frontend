@@ -7,13 +7,11 @@ export const Features = () => {
             title: 'Home',
             value: 'home',
             link: '/home',
-
         },
         profile: {
             title: 'Profile',
             value: 'profile',
             link: '/profile',
-
         }
     };
 

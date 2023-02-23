@@ -26,6 +26,10 @@
 
 .features__item:hover {
     color: #1DA1F2;
-    fill: #1DA1F2;
-    stroke: #1DA1F2;
+}
+
+svg path {
+    stroke:#1DA1F2;
+    stroke-width: 0.6px;
+    fill:#1DA1F2;
 }
