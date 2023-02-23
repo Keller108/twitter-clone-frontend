@@ -1,10 +1,11 @@
+import { Features } from '../../stories/Features';
 import './HomePage.css';
 
 export const HomePage = () => {
     return (
         <div className="home-page">
-            <aside className="features">
-
+            <aside className="home-page__features">
+                <Features />
             </aside>
             <main className="twittes">
 

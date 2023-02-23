@@ -2,13 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* height: 100vh; */
 }
 
-.features {
+.home-page__features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     height: 100vh;
     width: 30%;
     background-color: rgb(191, 191, 191);
+    padding: 20px;
 }
 
 .twittes {
