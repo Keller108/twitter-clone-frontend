@@ -1,25 +1,8 @@
 import './Features.css';
 import { featuresIconsMap } from './icons/featuresIconsMap';
-import { IFeatureItem } from './types';
-
-interface IFeaturesMap {
-    [key: string]: IFeatureItem
-}
+import { featuresMap } from './lib/featuresMap';
 
 export const Features = () => {
-    const featuresMap: IFeaturesMap = {
-        home: {
-            title: 'Home',
-            value: 'home',
-            link: '/home',
-        },
-        profile: {
-            title: 'Profile',
-            value: 'profile',
-            link: '/profile',
-        }
-    };
-
     const getIcon: (key: string) => JSX.Element = (key: string) => featuresIconsMap[key];
     const options = Object.entries(featuresMap).map(([key, value]) => ({ key, value }));
 
