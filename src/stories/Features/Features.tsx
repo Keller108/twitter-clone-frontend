@@ -25,7 +25,7 @@ export const Features = () => {
 
     return (
         <ul className="features">
-            {options.map(({ key, value }) => <li className="features__item">
+            {options.map(({ key, value }) => <li key={key} className="features__item">
                 {getIcon(key)}
                 <p className="features__text">{value.title}</p>
             </li>)}
