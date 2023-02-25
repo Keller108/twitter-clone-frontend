@@ -9,7 +9,7 @@ export const HomePage = () => {
                 <img className="home-page__logo" src={LOGO_PATH} alt="logo" />
                 <Features />
             </aside>
-            <main className="twittes">
+            <main className="home-page__main">
 
             </main>
             <aside className="news">
