@@ -1,21 +1,28 @@
 import './Post.css';
-import AVATAR_PATH from './assets/profile_img.png';
-import PIC_PATH from './assets/pic-twit-1.jpg';
 
-export const Post = () => {
+type Config = {
+    avatarPath: string;
+    userName: string;
+    accountName: string;
+    createdAt: string;
+    message: string;
+    imgPath: string;
+};
+
+export const Post = ({ avatarPath, userName, accountName, createdAt, message, imgPath }: Config) => {
     return (
         <li className="post">
-            <img className="post__avatar" src={AVATAR_PATH} alt="avatar" />
+            <img className="post__avatar" src={avatarPath} alt="avatar" />
             <div className="post__content">
                 <div className="post__header">
                     <div className="post__details">
-                        <h2 className="post__user-name">Devon Lane</h2>
-                        <p className="post__account-name">@devondude</p>
-                        <p className="post__created-date">~1 hour ago</p>
+                        <h2 className="post__user-name">{userName}</h2>
+                        <p className="post__account-name">{accountName}</p>
+                        <p className="post__created-date">{createdAt}</p>
                     </div>
-                    <p className="post__message">Tom is in a big hurry.</p>
+                    <p className="post__message">{message}</p>
                 </div>
-                <img className="post__picture" src={PIC_PATH} alt="post" />
+                <img className="post__picture" src={imgPath} alt="post" />
             </div>
         </li>
     )
