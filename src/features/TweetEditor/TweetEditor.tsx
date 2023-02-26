@@ -1,19 +1,10 @@
 import './TweetEditor.css';
 import PERSON_PATH from './assets/profile_img.png';
 import MEDIA_PATH from './assets/icon_image.svg';
-import { Button } from '../../shared/ui/Button';
-
-interface ITweet {
-    action: () => void;
-    icon: string;
-}
-
-interface ITweeterActionItems {
-    [key: string]: ITweet
-}
+import { ITweetActionItems } from './types';
 
 export const TweetEditor = () => {
-    const tweeterActionsMap: ITweeterActionItems = {
+    const tweeterActionsMap: ITweetActionItems = {
         media: {
             action: () => 1,
             icon: MEDIA_PATH
