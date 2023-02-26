@@ -5,6 +5,8 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    /* border-top: 1px solid #ebeef0;
+    border-bottom: 1px solid #ebeef0; */
 }
 
 .post__avatar {
@@ -19,40 +21,55 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    padding-left: 8px;
 }
 
 .post__header {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
     font-size: 15px;
     line-height: 1;
+    padding-top: 12px;
 }
 
 .post__details {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-bottom: 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    line-height: 1;
+}
+
+.post__details h2 {
+    margin-right: 14px;
+}
+
+.post__details p {
+    margin-right: 14px;
 }
 
 .post__user-name {
     font-weight: bold;
     color: #0F1419;
     margin-right: 8px;
+    margin: 0;
+    line-height: 1;
 }
 
 .post__account-name {
     color: #5B7083;
     font-weight: normal;
     margin-right: 8px;
+    margin: 0;
 }
 
 .post__created-date {
     color: #5B7083;
     font-weight: normal;
+    margin: 0;
 }
 
 .post__message {
@@ -66,4 +83,5 @@
     height: auto;
     object-fit: cover;
     font-size: 0;
+    border-radius: 10px;
 }

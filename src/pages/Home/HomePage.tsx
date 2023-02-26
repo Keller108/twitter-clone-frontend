@@ -3,6 +3,7 @@ import LOGO_PATH from './icons/logo.svg';
 import './HomePage.css';
 import { PageHeader } from '../../shared/ui/PageHeader';
 import { TweetEditor } from '../../features/TweetEditor';
+import { PostList } from '../../features/PostList';
 
 export const HomePage = () => {
     return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
             <main className="home-page__main">
                 <PageHeader title="Home" />
                 <TweetEditor />
+                <PostList />
             </main>
             <aside className="news">
 
