@@ -21,7 +21,7 @@ export const TweetEditor = () => {
             <div className="tweet-editor__content">
                 <textarea
                     className="tweet-editor__textarea"
-                    rows={4}
+                    rows={2}
                     placeholder="What's happening?"
                 />
                 <TweetActions options={tweeterActionsMap} />

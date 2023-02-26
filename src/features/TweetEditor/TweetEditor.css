@@ -15,10 +15,12 @@
 
 .tweet-editor__content {
     width: calc(100% - 74px);
-    padding: 6px;
+    padding: 0;
+    padding-top: 8px;
 }
 
 .tweet-editor__textarea {
     width: 100%;
     border: none;
+    margin-bottom: 18px;
 }
