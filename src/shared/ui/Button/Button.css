@@ -1,0 +1,42 @@
+.button {
+    width: 270px;
+    height: 50px;
+    border: unset;
+    background-color: unset;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: unset;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all .2s;
+}
+
+.button:hover {
+    background-color: #242424;
+    color: white;
+    border: none;
+}
+
+.button_primary {
+    border: none;
+    background-color: #1DA1F2;
+    color: white;
+}
+
+.button_secondary {
+    border: 1px solid #1DA1F2;
+    background-color: white;
+    color: #1DA1F2;
+}
+
+.mb-14 {
+    margin-bottom: 14px;
+}
+
+.mb-28 {
+    margin-bottom: 24px;
+}

@@ -1,0 +1,46 @@
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.features__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all .2s;
+    padding: 4px 32px 4px 16px;
+    border-radius: 32px;
+}
+
+.features__item:hover {
+    background-color: #ECF3FC;
+}
+
+.features__item svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.features__item:hover p {
+    color: #1DA1F2;
+}
+
+svg path {
+    stroke:#1DA1F2;
+    stroke-width: 0.6px;
+    fill:#1DA1F2;
+}
+
+.features__text {
+    font-weight: 700;
+    line-height: 1;
+    color: #0F1419;
+}
