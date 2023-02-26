@@ -12,7 +12,6 @@
     height: 100vh;
     width: 25%;
     background-color: white;
-    border-right: 1px solid #ebeef0;
     padding: 20px 60px;
 }
 
@@ -26,13 +25,13 @@
 .home-page__main {
     height: 100vh;
     width: 45%;
-    /* background-color: rgb(138, 138, 138); */
+    border-right: 1px solid #ebeef0;
+    border-left: 1px solid #ebeef0;
 }
 
 .news {
     height: 100vh;
     width: 30%;
-    background-color: rgb(103, 103, 103);
 }
 
 .home-page__title {

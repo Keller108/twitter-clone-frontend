@@ -1,6 +1,7 @@
 import { Features } from '../../stories/Features';
 import LOGO_PATH from './icons/logo.svg';
 import './HomePage.css';
+import { PageHeader } from '../../shared/ui/PageHeader';
 
 export const HomePage = () => {
     return (
@@ -10,7 +11,7 @@ export const HomePage = () => {
                 <Features />
             </aside>
             <main className="home-page__main">
-
+                <PageHeader title="Home" />
             </main>
             <aside className="news">
 
