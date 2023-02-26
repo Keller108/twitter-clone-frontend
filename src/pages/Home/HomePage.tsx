@@ -2,6 +2,7 @@ import { Features } from '../../stories/Features';
 import LOGO_PATH from './icons/logo.svg';
 import './HomePage.css';
 import { PageHeader } from '../../shared/ui/PageHeader';
+import { TweetEditor } from '../../features/TweetEditor';
 
 export const HomePage = () => {
     return (
@@ -12,6 +13,7 @@ export const HomePage = () => {
             </aside>
             <main className="home-page__main">
                 <PageHeader title="Home" />
+                <TweetEditor />
             </main>
             <aside className="news">
 

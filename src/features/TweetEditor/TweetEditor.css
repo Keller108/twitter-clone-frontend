@@ -1,0 +1,24 @@
+.tweet-editor {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 8px 18px;
+}
+
+.tweet-editor__avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 96px;
+}
+
+.tweet-editor__content {
+    width: calc(100% - 74px);
+    padding: 6px;
+}
+
+.tweet-editor__textarea {
+    width: 100%;
+    border: none;
+}
