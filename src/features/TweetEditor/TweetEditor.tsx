@@ -2,7 +2,7 @@ import './TweetEditor.css';
 import PERSON_PATH from './assets/profile_img.png';
 import MEDIA_PATH from './assets/icon_image.svg';
 import { ITweetActionItems } from './types';
-import { TweetActions } from './ui/TweetActions/TweetActions';
+import { TweetActions } from './ui/TweetActions';
 
 export const TweetEditor = () => {
     const tweeterActionsMap: ITweetActionItems = {
