@@ -1,0 +1,32 @@
+.tweet-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tweet-actions__items {
+    padding: 0;
+    list-style-type: none;
+}
+
+.tweet-actions__action {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.tweet-actions__action:last-of-type {
+    margin-right: 0;
+}
+
+.tweet-actions__action-btn {
+    width: 80px;
+    border-radius: 32px;
+    background-color: #1DA1F2;
+    padding: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

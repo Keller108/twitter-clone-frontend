@@ -2,6 +2,7 @@ import './TweetEditor.css';
 import PERSON_PATH from './assets/profile_img.png';
 import MEDIA_PATH from './assets/icon_image.svg';
 import { ITweetActionItems } from './types';
+import { TweetActions } from './ui/TweetActions/TweetActions';
 
 export const TweetEditor = () => {
     const tweeterActionsMap: ITweetActionItems = {
@@ -10,9 +11,6 @@ export const TweetEditor = () => {
             icon: MEDIA_PATH
         }
     };
-
-    const tweeterActions = Object.entries(tweeterActionsMap)
-        .map(([key, value]) => ({ key, value}));
 
     return (
         <div className="tweet-editor">
@@ -26,22 +24,7 @@ export const TweetEditor = () => {
                     rows={4}
                     placeholder="What's happening?"
                 />
-                <div className="tweet-editor__features">
-                    <ul className="tweet-editor__actions">
-                        {tweeterActions.map(({ value }) => <li
-                            className="tweet-editor__action">
-                                <img src={value.icon} alt="tweeterAction" />
-                            </li>)
-                        }
-                    </ul>
-                    <button
-                        className="tweet-editor__action-btn"
-                        type="button"
-                        onClick={() => 1}
-                    >
-                        Tweet
-                    </button>
-                </div>
+                <TweetActions options={tweeterActionsMap} />
             </div>
         </div>
     )

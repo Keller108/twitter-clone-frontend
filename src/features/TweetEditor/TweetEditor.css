@@ -22,36 +22,3 @@
     width: 100%;
     border: none;
 }
-
-.tweet-editor__features {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.tweet-editor__actions {
-    padding: 0;
-    list-style-type: none;
-}
-
-.tweet-editor__action {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-    cursor: pointer;
-}
-
-.tweet-editor__action:last-of-type {
-    margin-right: 0;
-}
-
-.tweet-editor__action-btn {
-    width: 80px;
-    border-radius: 32px;
-    background-color: #1DA1F2;
-    padding: 12px;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
