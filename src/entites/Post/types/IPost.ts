@@ -1,6 +1,9 @@
 export interface IPost {
     id: string;
-    createdBy: string;
+    avatarPath: string;
+    userName: string;
+    accountName: string;
     createdAt: string;
     message: string;
+    imgPath: string;
 }

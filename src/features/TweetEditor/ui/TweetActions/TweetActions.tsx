@@ -2,10 +2,11 @@ import { ITweetActionItems } from '../../types';
 import './TweetActions.css';
 
 type Props = {
-    options: ITweetActionItems
+    options: ITweetActionItems;
+    onSubmit: () => void;
 };
 
-export const TweetActions = ({ options }: Props) => {
+export const TweetActions = ({ options, onSubmit }: Props) => {
     const tweeterActions = Object.entries(options)
     .map(([key, value]) => ({ key, value}));
 
@@ -21,7 +22,7 @@ export const TweetActions = ({ options }: Props) => {
             <button
                 className="tweet-actions__action-btn"
                 type="button"
-                onClick={() => 1}
+                onClick={onSubmit}
             >
                 Tweet
             </button>
