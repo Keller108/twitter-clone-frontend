@@ -49,6 +49,7 @@ export const TweetEditor = () => {
                     rows={2}
                     placeholder="What's happening?"
                     onChange={(evt) => setMessage(evt.target.value)}
+                    value={message}
                 />
                 <TweetActions options={tweeterActionsMap} onSubmit={postATweet} />
             </div>

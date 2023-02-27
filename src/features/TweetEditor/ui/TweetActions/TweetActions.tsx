@@ -13,8 +13,10 @@ export const TweetActions = ({ options, onSubmit }: Props) => {
     return (
         <div className="tweet-actions">
             <ul className="tweet-actions__items">
-                {tweeterActions.map(({ value }) => <li
-                    className="tweet-actions__action">
+                {tweeterActions.map(({ value }, i) => <li
+                    className="tweet-actions__action"
+                    key={i + 1}
+                    >
                         <img src={value.icon} alt="tweeterAction" />
                     </li>)
                 }
