@@ -3,19 +3,19 @@ import { createUser } from "../actions/user";
 
 type InitialUserState = {
     user: {
+        userName: string;
         email: string;
         password: string;
         avatar: string;
-        userName: string;
     }
 };
 
 const initialUserState: InitialUserState = {
     user: {
+        userName: '',
         email: '',
         password: '',
-        avatar: '',
-        userName: ''
+        avatar: ''
     }
 };
 

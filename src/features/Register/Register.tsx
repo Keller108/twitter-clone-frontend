@@ -7,6 +7,7 @@ export const Register = () => {
             formTitle="Зарегистрироваться"
             btnText="Регистрация"
             onSubmit={() => 1}
+            isRegister={true}
         />
     )
 }
