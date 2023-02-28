@@ -8,7 +8,7 @@ type Props = {
 
 export const TweetActions = ({ options, onSubmit }: Props) => {
     const tweeterActions = Object.entries(options)
-    .map(([key, value]) => ({ key, value}));
+        .map(([key, value]) => ({ key, value}));
 
     return (
         <div className="tweet-actions">
@@ -30,4 +30,4 @@ export const TweetActions = ({ options, onSubmit }: Props) => {
             </button>
         </div>
     )
-}
+};
