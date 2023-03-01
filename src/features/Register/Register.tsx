@@ -1,7 +1,7 @@
-import { ChangeEvent, FormEvent, Fragment, useState } from 'react';
+import { ChangeEvent, FormEvent, Fragment, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../services/actions/user';
-import { useDispatch } from '../../shared/hooks';
+import { useDispatch, useSelector } from '../../shared/hooks';
 import { HOME_ROUTE } from '../../shared/routes';
 import { Form } from '../../shared/ui/Form';
 import { FormInput } from '../../shared/ui/FormInput';
@@ -14,7 +14,7 @@ export const Register = () => {
         password: '',
         avatar: ''
     });
-
+    const { success } = useSelector(store => store.userStore);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -49,8 +49,12 @@ export const Register = () => {
     const onFormSubmit = (evt: FormEvent) => {
         evt.preventDefault();
         dispatch(createUser(user));
-        navigate(HOME_ROUTE);
     };
+
+    useEffect(() => {
+        if (success === true) navigate(HOME_ROUTE);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [success])
 
     return (
         <Form
