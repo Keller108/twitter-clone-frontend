@@ -8,10 +8,10 @@ type Props = {
     formTitle: string;
     btnText: string;
     onSubmit: () => void;
-    isRegister?: boolean;
+    children: JSX.Element;
 };
 
-export const Form = ({ formTitle, btnText, onSubmit, isRegister = false }: Props) => {
+export const Form = ({ formTitle, btnText, onSubmit, children }: Props) => {
     const [user, setUser] = useState({
         userName: '',
         email: '',

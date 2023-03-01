@@ -1,0 +1,13 @@
+.form-label {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.form-input {
+    height: 30px;
+    margin-bottom: 28px;
+    border: none;
+    border-bottom: 1px solid #1DA1F2;
+}
