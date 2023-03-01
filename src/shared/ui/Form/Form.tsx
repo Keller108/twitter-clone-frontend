@@ -1,7 +1,8 @@
-import { ChangeEvent, Fragment, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { createUser } from '../../../services/actions/user';
-import { useDispatch, useSelector } from '../../hooks';
+import { useDispatch } from '../../hooks';
 import { Button } from '../Button';
+import { FormInput } from '../FormInput';
 import './Form.css';
 
 type Props = {
@@ -48,38 +49,30 @@ export const Form = ({ formTitle, btnText, onSubmit, children }: Props) => {
     return (
         <form onSubmit={onSubmit} className="form">
             <h2 className="form__title">{formTitle}</h2>
-            <label className="form__label" htmlFor="name">Ваше имя</label>
-            <input
+            <FormInput
+                label='Ваше имя'
                 onChange={setName}
-                className="form__input"
-                id="name"
-                type="text"
+                name='name'
+                type='text'
             />
-            <label className="form__label" htmlFor="name">Ваша почта</label>
-            <input
+            <FormInput
+                label='Ваша почта'
                 onChange={setEmail}
-                className="form__input"
-                id="name"
-                type="email"
+                name='email'
+                type='email'
             />
-            <label className="form__label" htmlFor="name">Ваш пароль</label>
-            <input
+            <FormInput
+                label='Ваш пароль'
                 onChange={setPassword}
-                className="form__input"
-                id="name"
-                type="password"
+                name='password'
+                type='password'
             />
-            {isRegister &&
-                <Fragment>
-                    <label className="form__label" htmlFor="avatar">Ссылка на аватар</label>
-                    <input
-                        onChange={setAvatar}
-                        className="form__input"
-                        id="avatar"
-                        type="text"
-                    />
-                </Fragment>
-            }
+            <FormInput
+                label='Ссылка на аватар'
+                onChange={setAvatar}
+                name='avatar'
+                type='text'
+            />
             <Button
                 type="primary"
                 actionType="submit"
