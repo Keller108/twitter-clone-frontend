@@ -6,10 +6,12 @@ type Config = {
     accountName: string;
     createdAt: string;
     message: string;
-    imgPath: string;
+    imgPath?: string;
 };
 
-export const Post = ({ avatarPath, userName, accountName, createdAt, message, imgPath }: Config) => {
+export const Post = ({
+    avatarPath, userName, accountName, createdAt, message, imgPath
+}: Config) => {
     return (
         <li className="post">
             <img className="post__avatar" src={avatarPath} alt="avatar" />
@@ -22,7 +24,7 @@ export const Post = ({ avatarPath, userName, accountName, createdAt, message, im
                     </div>
                     <p className="post__message">{message}</p>
                 </div>
-                <img className="post__picture" src={imgPath} alt="post" />
+                {imgPath && <img className="post__picture" src={imgPath} alt="post" />}
             </div>
         </li>
     )

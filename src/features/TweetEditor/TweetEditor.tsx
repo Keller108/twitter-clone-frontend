@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const TweetEditor = () => {
     const [message, setMessage] = useState("");
-    const { avatar } = useSelector(store => store.userStore.user);
+    const { userName, avatar } = useSelector(store => store.userStore.user);
     const dispatch = useDispatch();
 
     const tweeterActionsMap: ITweetActionItems = {
@@ -25,13 +25,13 @@ export const TweetEditor = () => {
     const postATweet = () => {
         const post = {
             id: uuidv4(),
-            userName: 'User',
-            avatarPath: PROFILE_PATH,
+            userName: userName,
+            avatarPath: avatar,
             accountName: '@user',
             createdAt: 'now',
             createdBy: PERSON_PATH,
             message: message,
-            imgPath: PICTURE_PATH
+            imgPath: ''
         };
         dispatch(postMessage(post));
         setMessage('');

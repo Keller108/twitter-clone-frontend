@@ -5,5 +5,5 @@ export interface IPost {
     accountName: string;
     createdAt: string;
     message: string;
-    imgPath: string;
+    imgPath?: string;
 }
