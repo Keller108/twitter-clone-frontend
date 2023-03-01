@@ -1,4 +1,4 @@
-import { ChangeEvent, Fragment, useState } from 'react';
+import { ChangeEvent, FormEvent, Fragment, useState } from 'react';
 import { createUser } from '../../services/actions/user';
 import { useDispatch } from '../../shared/hooks';
 import { Form } from '../../shared/ui/Form';
@@ -43,7 +43,8 @@ export const Register = () => {
         })
     );
 
-    const onFormSubmit = () => {
+    const onFormSubmit = (evt: FormEvent) => {
+        evt.preventDefault();
         dispatch(createUser(user));
     };
 

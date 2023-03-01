@@ -1,10 +1,11 @@
+import { FormEvent } from 'react';
 import { Button } from '../Button';
 import './Form.css';
 
 type Props = {
     formTitle: string;
     btnText: string;
-    onSubmit: () => void;
+    onSubmit: (evt: FormEvent) => void;
     children: JSX.Element;
 };
 
