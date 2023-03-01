@@ -3,14 +3,14 @@ import './Post.css';
 type Config = {
     avatarPath: string;
     userName: string;
-    accountName: string;
+    createdBy: string;
     createdAt: string;
     message: string;
     imgPath?: string;
 };
 
 export const Post = ({
-    avatarPath, userName, accountName, createdAt, message, imgPath
+    avatarPath, userName, createdBy, createdAt, message, imgPath
 }: Config) => {
     return (
         <li className="post">
@@ -19,7 +19,7 @@ export const Post = ({
                 <div className="post__header">
                     <div className="post__details">
                         <h2 className="post__user-name">{userName}</h2>
-                        <p className="post__account-name">{accountName}</p>
+                        <p className="post__account-name">{createdBy}</p>
                         <p className="post__created-date">{createdAt}</p>
                     </div>
                     <p className="post__message">{message}</p>
