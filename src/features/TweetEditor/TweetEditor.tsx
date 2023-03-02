@@ -6,10 +6,16 @@ import { useDispatch, useSelector } from '../../shared/hooks';
 import { postMessage } from '../../services/actions/post';
 import { v4 as uuidv4 } from 'uuid';
 import './TweetEditor.css';
+import { FormInput } from '../../shared/ui/FormInput';
 
 export const TweetEditor = () => {
     const [message, setMessage] = useState("");
+    const [imgModalActive, setImgModalActive] = useState(false);
+    const [, setMediaLink] = useState("");
+
+    const { isModalActive } = useSelector(store => store.modalStore);
     const { userName, avatar } = useSelector(store => store.userStore.user);
+
     const dispatch = useDispatch();
 
     const tweeterActionsMap: ITweetActionItems = {
@@ -33,9 +39,17 @@ export const TweetEditor = () => {
         setMessage('');
     };
 
+    const modalComponent = <FormInput
+        label="Ссылка на картинку"
+        type='text'
+        name='media'
+        onChange={(evt) => setMediaLink(evt.target.value)}
+    />;
+
     return (
         <div className="tweet-editor">
-            <img className="tweet-editor__avatar"
+            <img
+                className="tweet-editor__avatar"
                 src={avatar}
                 alt="account img"
             />
