@@ -21,7 +21,8 @@ export const TweetEditor = () => {
     const tweeterActionsMap: ITweetActionItems = {
         media: {
             action: () => setTweetModalActive(true),
-            icon: MEDIA_PATH
+            icon: MEDIA_PATH,
+            img: !!mediaLink
         }
     };
 

@@ -19,6 +19,7 @@ export const TweetActions = ({ options, onSubmit }: Props) => {
                         onClick={value.action}
                     >
                         <img src={value.icon} alt="tweeterAction" />
+                        {value.img && <span className="tweet-actions__label">Добавлено</span>}
                     </li>)
                 }
             </ul>
