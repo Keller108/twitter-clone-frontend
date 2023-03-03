@@ -30,8 +30,8 @@ export const TweetEditor = () => {
             id: uuidv4(),
             userName: userName,
             avatarPath: avatar,
-            createdBy: '@user',
-            createdAt: 'now',
+            createdBy: '@admin',
+            createdAt: new Date().toDateString(),
             message: message,
             imgPath: mediaLink
         };
