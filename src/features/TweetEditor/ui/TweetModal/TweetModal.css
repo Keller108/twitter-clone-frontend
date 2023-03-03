@@ -15,10 +15,18 @@
 }
 
 .tweet-modal__popup {
-    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 340px;
     height: auto;
     padding: 24px;
     border-radius: 20px;
     background-color: white;
     color: black
+}
+
+.tweet-modal__popup input {
+    width: calc(100% - 20px);
 }

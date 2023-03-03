@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Button } from '../../../../shared/ui/Button';
 import './TweetModal.css';
 
 type Props = {
@@ -24,6 +25,9 @@ export const TweetModal = ({ closeModal, children }: Props) => {
         <div className="tweet-modal">
             <div className="tweet-modal__popup">
                 {children}
+                <Button type='primary' actionType='button' action={closeModal}>
+                    Добавить картинку
+                </Button>
             </div>
         </div>
     )

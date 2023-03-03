@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from '../../shared/hooks';
-import MEDIA_PATH from './assets/icon_image.svg';
+import { v4 as uuidv4 } from 'uuid';
 import { ITweetActionItems } from './types';
 import { TweetActions } from './ui/TweetActions';
 import { postMessage } from '../../services/actions/post';
-import { v4 as uuidv4 } from 'uuid';
-import './TweetEditor.css';
 import { FormInput } from '../../shared/ui/FormInput';
 import { TweetModal } from './ui/TweetModal';
+import MEDIA_PATH from './assets/icon_image.svg';
+import './TweetEditor.css';
 
 export const TweetEditor = () => {
     const [message, setMessage] = useState("");
@@ -20,11 +20,7 @@ export const TweetEditor = () => {
 
     const tweeterActionsMap: ITweetActionItems = {
         media: {
-            action: () => {
-                setTweetModalActive(true);
-                console.log('click');
-
-            },
+            action: () => setTweetModalActive(true),
             icon: MEDIA_PATH
         }
     };
@@ -37,7 +33,7 @@ export const TweetEditor = () => {
             createdBy: '@user',
             createdAt: 'now',
             message: message,
-            imgPath: ''
+            imgPath: mediaLink
         };
         dispatch(postMessage(post));
         setMessage('');
@@ -71,7 +67,7 @@ export const TweetEditor = () => {
                 />
             </div>
             {tweetModalActive && <TweetModal
-                closeModal={() => setTweetModalActive(false)}
+                    closeModal={() => setTweetModalActive(false)}
                 >
                     {modalComponent}
                 </TweetModal>
