@@ -14,8 +14,9 @@ export const TweetActions = ({ options, onSubmit }: Props) => {
         <div className="tweet-actions">
             <ul className="tweet-actions__items">
                 {tweeterActions.map(({ value }, i) => <li
-                    className="tweet-actions__action"
-                    key={i + 1}
+                        className="tweet-actions__action"
+                        key={i + 1}
+                        onClick={value.action}
                     >
                         <img src={value.icon} alt="tweeterAction" />
                     </li>)

@@ -7,11 +7,12 @@ import { postMessage } from '../../services/actions/post';
 import { v4 as uuidv4 } from 'uuid';
 import './TweetEditor.css';
 import { FormInput } from '../../shared/ui/FormInput';
+import { TweetModal } from './ui/TweetModal';
 
 export const TweetEditor = () => {
     const [message, setMessage] = useState("");
     const [tweetModalActive, setTweetModalActive] = useState(false);
-    const [, setMediaLink] = useState("");
+    const [mediaLink, setMediaLink] = useState("");
 
     const { userName, avatar } = useSelector(store => store.userStore.user);
 
@@ -19,7 +20,11 @@ export const TweetEditor = () => {
 
     const tweeterActionsMap: ITweetActionItems = {
         media: {
-            action: () => 1,
+            action: () => {
+                setTweetModalActive(true);
+                console.log('click');
+
+            },
             icon: MEDIA_PATH
         }
     };
@@ -60,8 +65,17 @@ export const TweetEditor = () => {
                     onChange={(evt) => setMessage(evt.target.value)}
                     value={message}
                 />
-                <TweetActions options={tweeterActionsMap} onSubmit={postATweet} />
+                <TweetActions
+                    options={tweeterActionsMap}
+                    onSubmit={postATweet}
+                />
             </div>
+            {tweetModalActive && <TweetModal
+                closeModal={() => setTweetModalActive(false)}
+                >
+                    {modalComponent}
+                </TweetModal>
+            }
         </div>
     )
 };
