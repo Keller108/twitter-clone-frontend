@@ -9,7 +9,7 @@ const initialAppState: InitialStateType = {
     isLogined: false,
 };
 
-export const loaderReducer = createReducer(initialAppState, builder => {
+export const authReducer = createReducer(initialAppState, builder => {
     builder
         .addCase(logIn, state => {
             state.isLogined = true;
