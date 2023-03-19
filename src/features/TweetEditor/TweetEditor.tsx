@@ -38,6 +38,7 @@ export const TweetEditor = () => {
         };
         dispatch(postMessage(post));
         setMessage('');
+        setMediaLink('');
     };
 
     const modalComponent = <FormInput
