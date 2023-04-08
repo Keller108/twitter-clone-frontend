@@ -13,7 +13,7 @@ export const Register = () => {
         password: '',
         avatar: ''
     });
-    const { success } = useSelector(store => store.userStore);
+    const { registerSuccess } = useSelector(store => store.userStore);
     const dispatch = useDispatch();
 
     const setName = (evt: ChangeEvent<HTMLInputElement>) => setUser(
@@ -50,11 +50,11 @@ export const Register = () => {
     };
 
     useEffect(() => {
-        if (success === true) {
+        if (registerSuccess === true) {
             dispatch(modalClose());
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [success])
+    }, [registerSuccess])
 
     return (
         <Form

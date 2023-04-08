@@ -3,13 +3,15 @@ import { IUserModel } from "../../entites/User";
 import { createUser, setCurrentUser } from "../actions/user";
 
 type InitialUserState = {
-    success: boolean;
+    registerSuccess: boolean;
+    userCreateSuccess: boolean;
     user: IUserModel,
     users: IUserModel[];
 };
 
 const initialUserState: InitialUserState = {
-    success: false,
+    registerSuccess: false,
+    userCreateSuccess: false,
     user: {
         userName: '',
         email: '',
@@ -22,10 +24,11 @@ const initialUserState: InitialUserState = {
 export const userReducer = createReducer(initialUserState, builder => {
     builder
         .addCase(createUser, (state, action) => {
-            state.success = true;
+            state.registerSuccess = true;
             state.users.push(action.payload);
         })
         .addCase(setCurrentUser, (state, action) => {
             state.user = action.payload;
+            state.userCreateSuccess = true;
         })
 });

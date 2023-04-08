@@ -1,21 +1,22 @@
-import { ChangeEvent, FormEvent, Fragment, useState } from 'react';
+import { ChangeEvent, FormEvent, Fragment, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { setCurrentUser } from '../../services/actions/user';
 import { useDispatch, useSelector } from '../../shared/hooks';
+import { HOME_ROUTE } from '../../shared/routes';
 import { Form } from '../../shared/ui/Form';
 import { FormInput } from '../../shared/ui/FormInput';
 import './Login.css';
 
 export const Login = () => {
+    const navigate = useNavigate();
     const [user, setUser] = useState({
         email: '',
         password: ''
     });
 
-    const { users } = useSelector(store => store.userStore);
+    const { users, userCreateSuccess } = useSelector(store => store.userStore);
 
     const dispatch = useDispatch();
-
-    console.log('users', users);
 
     const onFormSubmit = (evt: FormEvent) => {
         evt.preventDefault();
@@ -23,7 +24,6 @@ export const Login = () => {
         if (userExists) {
             dispatch(setCurrentUser(userExists));
         }
-        console.log('userExists', userExists);
     };
 
     const setEmail = (evt: ChangeEvent<HTMLInputElement>) => setUser(
@@ -39,6 +39,11 @@ export const Login = () => {
             password: evt.target.value
         })
     );
+
+    useEffect(() => {
+        if (userCreateSuccess) navigate(HOME_ROUTE);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [userCreateSuccess])
 
     return (
         <Form
