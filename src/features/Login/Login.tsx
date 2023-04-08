@@ -1,13 +1,30 @@
-import { ChangeEvent, Fragment, useState } from 'react';
+import { ChangeEvent, FormEvent, Fragment, useState } from 'react';
+import { setCurrentUser } from '../../services/actions/user';
+import { useDispatch, useSelector } from '../../shared/hooks';
 import { Form } from '../../shared/ui/Form';
 import { FormInput } from '../../shared/ui/FormInput';
 import './Login.css';
 
 export const Login = () => {
-    const [, setUser] = useState({
+    const [user, setUser] = useState({
         email: '',
         password: ''
     });
+
+    const { users } = useSelector(store => store.userStore);
+
+    const dispatch = useDispatch();
+
+    console.log('users', users);
+
+    const onFormSubmit = (evt: FormEvent) => {
+        evt.preventDefault();
+        let userExists = users.find((usr) => usr.email === user.email);
+        if (userExists) {
+            dispatch(setCurrentUser(userExists));
+        }
+        console.log('userExists', userExists);
+    };
 
     const setEmail = (evt: ChangeEvent<HTMLInputElement>) => setUser(
         (prevState) => ({
@@ -27,7 +44,7 @@ export const Login = () => {
         <Form
             formTitle="Авторизоваться"
             btnText="Авторизация"
-            onSubmit={() => 1}
+            onSubmit={onFormSubmit}
         >
             <Fragment>
                 <FormInput

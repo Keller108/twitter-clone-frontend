@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { IUserModel } from "../../entites/User";
-import { createUser } from "../actions/user";
+import { createUser, setCurrentUser } from "../actions/user";
 
 type InitialUserState = {
     success: boolean;
@@ -23,7 +23,9 @@ export const userReducer = createReducer(initialUserState, builder => {
     builder
         .addCase(createUser, (state, action) => {
             state.success = true;
-            state.user = action.payload;
             state.users.push(action.payload);
+        })
+        .addCase(setCurrentUser, (state, action) => {
+            state.user = action.payload;
         })
 });

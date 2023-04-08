@@ -1,1 +1,1 @@
-export { CREATE_USER } from './user';
+export { CREATE_USER, SET_CURRENT_USER } from './user';
