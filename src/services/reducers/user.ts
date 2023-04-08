@@ -1,14 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit";
+import { IUserModel } from "../../entites/User";
 import { createUser } from "../actions/user";
 
 type InitialUserState = {
     success: boolean;
-    user: {
-        userName: string;
-        email: string;
-        password: string;
-        avatar: string;
-    }
+    user: IUserModel,
+    users: IUserModel[];
 };
 
 const initialUserState: InitialUserState = {
@@ -18,7 +15,8 @@ const initialUserState: InitialUserState = {
         email: '',
         password: '',
         avatar: ''
-    }
+    },
+    users: []
 };
 
 export const userReducer = createReducer(initialUserState, builder => {
@@ -26,5 +24,6 @@ export const userReducer = createReducer(initialUserState, builder => {
         .addCase(createUser, (state, action) => {
             state.success = true;
             state.user = action.payload;
+            state.users.push(action.payload);
         })
 });

@@ -26,4 +26,4 @@ export const HomePage = () => {
             </aside>
         </div>
     )
-}
+};

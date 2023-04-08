@@ -1,8 +1,7 @@
 import { ChangeEvent, FormEvent, Fragment, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { modalClose } from '../../services/actions/modal';
 import { createUser } from '../../services/actions/user';
 import { useDispatch, useSelector } from '../../shared/hooks';
-import { HOME_ROUTE } from '../../shared/routes';
 import { Form } from '../../shared/ui/Form';
 import { FormInput } from '../../shared/ui/FormInput';
 import './Register.css';
@@ -16,7 +15,6 @@ export const Register = () => {
     });
     const { success } = useSelector(store => store.userStore);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     const setName = (evt: ChangeEvent<HTMLInputElement>) => setUser(
         (prevState) => ({
@@ -52,7 +50,9 @@ export const Register = () => {
     };
 
     useEffect(() => {
-        if (success === true) navigate(HOME_ROUTE);
+        if (success === true) {
+            dispatch(modalClose());
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [success])
 
